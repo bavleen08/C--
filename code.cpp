@@ -18,9 +18,21 @@ int main() {  // main function
     // int newPrice = (int)prices; // explicit
 
 // input
-    int age;
-    cout << "Enter your age: ";
-    cin >> age;
-    cout << "Your age is: " << age  ;
-    return 0;
+    // int age;
+    // cout << "Enter your age: ";
+    // cin >> age;
+
+// operators
+    // int a = 12, b = 5;
+
+    // cout << a/double(b);
+
+// loops
+    int count = 1;
+
+    while (count <= 5) {
+        cout << count << " ";
+        count++;
+    }
+    return 0;  
 }
