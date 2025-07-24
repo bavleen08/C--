@@ -28,11 +28,46 @@ int main() {  // main function
     // cout << a/double(b);
 
 // loops
-    int count = 1;
+    // int count = 1;
 
-    while (count <= 5) {
-        cout << count << " ";
-        count++;
-    }
-    return 0;  
+    // while (count <= 5) {
+    //     cout << count << " ";
+    //     count++;
+    // }
+    // return 0;  
+    
+// if prime or not
+    // int n;
+    // cout << "enter n: ";
+    // cin >> n;
+    // int i;
+    // for(i=2; i*i<=n; i++){ //i<=n-1
+    //     if(n%i==0){
+    //         cout << "It is non prime";
+    //         //break;
+    //     } else{
+    //         cout << "It is prime";
+    //         //break;
+    //     }
+    // }
+
+// sum of 1 to n which are divisible by 3
+    // int n = 10;
+    // int sum = 0;
+    // int i;
+    // for(i=1; i<=n; ++i){
+    //     if(i%3==0){
+    //         sum += i;
+    //     }       
+    // }
+ // cout << sum; 
+ // return 0;
+
+// print factorial of n
+int n =3;
+int fact = 1;
+for(int i =1; i<=n; i++){
+    fact *= i;
+}
+cout << fact;
 }
