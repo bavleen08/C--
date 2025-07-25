@@ -64,10 +64,92 @@ int main() {  // main function
  // return 0;
 
 // print factorial of n
-int n =3;
-int fact = 1;
-for(int i =1; i<=n; i++){
-    fact *= i;
+// int n =3;
+// int fact = 1;
+// for(int i =1; i<=n; i++){
+//     fact *= i;
+// }
+// cout << fact;
+
+// pattern printing
+// int n = 6;
+// for(int i=1 ; i<=n; i++) {
+//     for(int j=1 ; j<=n; j++){
+//         cout << j;
+//     }
+//     cout << endl;
+// }
+// return 0;
+
+// printing character
+// int n = 6;
+// for(int i=0 ; i<n; i++) {
+//     char ch = 'A';
+//     for(int j=0 ; j<n; j++){
+//         cout << ch;
+//         ch = ch + 1;
+//     }
+//     cout << endl;
+// }
+// return 0;
+
+// printing continuous
+// int n = 4;
+// int num = 1;
+// for(int i=0; i<n; i++){
+//     for(int j=0; j<n; j++){
+//         cout << num << " ";
+//         num++;
+//     }
+//     cout << endl;
+// }
+// cout << "after pattern:"<< num;
+// return 0;
+
+// printing continuous abc
+// int n = 3;
+// char ch = 'A';
+// for(int i=0; i<n; i++){
+//     for(int j=0; j<n; j++){
+//         cout << ch << " ";
+//         ch = ch + 1;
+//     }
+//     cout << endl;
+// }
+// cout << "after pattern:"<< ch;
+// return 0;
+
+// priting triangle pattern
+// int n = 4;
+// for(int i=0; i<n; i++) {
+//     for(int j=0; j<i+1; j++){
+//         cout << '*';
+//     }
+//     cout << endl;
+// }
+// return 0;
+
+// priting triangle pattern with numbers
+// int n = 4;
+// for(int i=0; i<n; i++) {
+//     for(int j=0; j<i+1; j++){
+//         cout << (i+1);
+//     }
+//     cout << endl;
+// }
+// return 0;
+
+// priting triangle pattern with characters
+int n = 4;
+for(int i=0; i<n; i++) {
+    char ch = 'A'+ i;
+    for(int j=0; j<i+1; j++){
+        cout << ch << " ";
+        
+    }
+    cout << endl;
 }
-cout << fact;
+return 0;
 }
+
+
