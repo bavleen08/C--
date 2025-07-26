@@ -71,7 +71,7 @@ int main() {  // main function
 // }
 // cout << fact;
 
-// pattern printing
+// 1. pattern printing
 // int n = 6;
 // for(int i=1 ; i<=n; i++) {
 //     for(int j=1 ; j<=n; j++){
@@ -81,7 +81,7 @@ int main() {  // main function
 // }
 // return 0;
 
-// printing character
+// 2. printing character
 // int n = 6;
 // for(int i=0 ; i<n; i++) {
 //     char ch = 'A';
@@ -93,7 +93,7 @@ int main() {  // main function
 // }
 // return 0;
 
-// printing continuous
+// 3. printing continuous
 // int n = 4;
 // int num = 1;
 // for(int i=0; i<n; i++){
@@ -106,7 +106,7 @@ int main() {  // main function
 // cout << "after pattern:"<< num;
 // return 0;
 
-// printing continuous abc
+// 4. printing continuous abc
 // int n = 3;
 // char ch = 'A';
 // for(int i=0; i<n; i++){
@@ -119,7 +119,7 @@ int main() {  // main function
 // cout << "after pattern:"<< ch;
 // return 0;
 
-// priting triangle pattern
+// 5. priting triangle pattern
 // int n = 4;
 // for(int i=0; i<n; i++) {
 //     for(int j=0; j<i+1; j++){
@@ -129,7 +129,7 @@ int main() {  // main function
 // }
 // return 0;
 
-// priting triangle pattern with numbers
+// 6. priting triangle pattern with numbers
 // int n = 4;
 // for(int i=0; i<n; i++) {
 //     for(int j=0; j<i+1; j++){
@@ -139,17 +139,74 @@ int main() {  // main function
 // }
 // return 0;
 
-// priting triangle pattern with characters
-int n = 4;
-for(int i=0; i<n; i++) {
-    char ch = 'A'+ i;
-    for(int j=0; j<i+1; j++){
-        cout << ch << " ";
+// 7. priting triangle pattern with characters repetitive
+// int n = 4;
+// for(int i=0; i<n; i++) {
+//     char ch = 'A'+ i;
+//     for(int j=0; j<i+1; j++){
+//         cout << ch << " ";
         
-    }
-    cout << endl;
-}
-return 0;
+//     }
+//     cout << endl;
+// }
+// return 0;
+
+// 8. priting triangle pattern with numbers 1,12,123...
+// int n = 4;
+// for(int i=0; i<n; i++) {
+//     for(int j=1; j<=i+1; j++){
+//         cout << j;
+//     }
+//     cout << endl;
+// }
+// return 0;
+
+// 9. printing reverse triangle
+// int n = 4;
+// for(int i=0; i<n; i++) {
+//     for(int j= i+1; j>0; j--) {
+//         cout << j << " ";
+//     }
+//     cout << endl;
+// }
+
+// 10. floyds triangle with numbers
+// int n = 4;
+// int num = 1;
+// for(int i=0; i<n; i++) {
+//     for(int j=0; j<i+1; j++) {
+//         cout << num << " ";
+//         num++;    
+//     }
+//     cout << endl;
+// }
+
+// 11. floyds triangle with characters
+// int n = 4;
+// char ch = 'A';
+// for(int i=0; i<n; i++) {
+//     for(int j=0; j<i+1; j++) {
+//         cout << ch << " ";
+//         ch++;    
+//     }
+//     cout << endl;
+// }
+
+// 12. reverse triangle with characters
+// int n = 4;
+// char ch ='a';
+// for(int i=0; i<n; i++) {
+//     char temp = ch;
+//     for(int j= i+1; j>0; j--) {
+//         cout << temp-- << " ";
+//         //cout << temp;
+
+//     }
+//     ch++;
+//     cout << endl;
+// }
+
+
 }
 
 
