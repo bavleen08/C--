@@ -206,18 +206,55 @@ int main() {  // main function
 //     cout << endl;
 // }
 
-int n = 4;
-for(int i=0; i<n; i++) {
-    //spaces
-    for(int j=0; j<i; j++) {
-        cout << " ";
-    }
-    //nums
-    for(int j=0; j<n-i; j++) {
-        cout << (i+1);
-    }
-    cout << endl;
-}
+// 13. inverted triangle with numbers
+// int n = 4;
+// for(int i=0; i<n; i++) {
+//     //spaces
+//     for(int j=0; j<i; j++) {
+//         cout << " ";
+//     }
+//     //nums
+//     for(int j=0; j<n-i; j++) {
+//         cout << (i+1);
+//     }
+//     cout << endl;
+// }
+
+// 14. inverted triangle with characters
+// int n = 5;
+// char ch = 'A';
+// for(int i=0; i<n; i++) {
+//     //spaces
+//     for(int j=0; j<i; j++) {
+//         cout << " ";
+//     }
+//     //nums
+//     for(int j=0; j<n-i; j++) {
+//         cout << ch;
+//         ch++; //<-- HERE: increases in every loop (so every character changes)  
+//     }
+//     ch++; //<-- HERE: increases once per row (so whole row has same character)
+//     cout << endl;
+// }
+
+// 15. pyramid pattern
+// int n = 4;
+// for(int i=0; i<n; i++) {
+//     //spaces: n-i-1
+//     for(int j=0; j<n-i-1; j++){
+//         cout << " ";
+//     }
+//     //nums1: 1 to i+1
+//     for(int j=1; j<=i+1; j++){
+//         cout << j;
+//     }
+//     //nums2
+//     for(int j=i; j>=1; j--){
+//         cout << j;
+//     }
+//     cout << endl;
+// }
+// return 0;
 }
 
 
