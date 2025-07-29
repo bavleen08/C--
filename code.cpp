@@ -3,6 +3,7 @@ using namespace std;
 
 int main() {  // main function
     // cout << "hello world"<<endl <<"hi there"; // std::cout << "hello"
+    
  // data types
     // int age = 25;
     // char grade = 'A';
@@ -71,7 +72,7 @@ int main() {  // main function
 // }
 // cout << fact;
 
-// 1. pattern printing
+// 1. PATTERN PRINTING
 // int n = 6;
 // for(int i=1 ; i<=n; i++) {
 //     for(int j=1 ; j<=n; j++){
@@ -81,7 +82,7 @@ int main() {  // main function
 // }
 // return 0;
 
-// 2. printing character
+// 2. PRINTING CHARACTERS
 // int n = 6;
 // for(int i=0 ; i<n; i++) {
 //     char ch = 'A';
@@ -93,7 +94,7 @@ int main() {  // main function
 // }
 // return 0;
 
-// 3. printing continuous
+// 3. PRINTING CONTINUOUS
 // int n = 4;
 // int num = 1;
 // for(int i=0; i<n; i++){
@@ -106,7 +107,7 @@ int main() {  // main function
 // cout << "after pattern:"<< num;
 // return 0;
 
-// 4. printing continuous abc
+// 4. PRINTING CONTINUOUS ABC
 // int n = 3;
 // char ch = 'A';
 // for(int i=0; i<n; i++){
@@ -119,7 +120,7 @@ int main() {  // main function
 // cout << "after pattern:"<< ch;
 // return 0;
 
-// 5. priting triangle pattern
+// 5. PRINTING TRIANGLE PATTERN 
 // int n = 4;
 // for(int i=0; i<n; i++) {
 //     for(int j=0; j<i+1; j++){
@@ -129,7 +130,7 @@ int main() {  // main function
 // }
 // return 0;
 
-// 6. priting triangle pattern with numbers
+// 6. PRINTING TRIANGLE PATTERN WITH NUMBERS
 // int n = 4;
 // for(int i=0; i<n; i++) {
 //     for(int j=0; j<i+1; j++){
@@ -139,7 +140,7 @@ int main() {  // main function
 // }
 // return 0;
 
-// 7. priting triangle pattern with characters repetitive
+// 7. PRINTING TRIANGLE PATTERN WITH CHARACTERS REPITITIVE
 // int n = 4;
 // for(int i=0; i<n; i++) {
 //     char ch = 'A'+ i;
@@ -151,7 +152,7 @@ int main() {  // main function
 // }
 // return 0;
 
-// 8. priting triangle pattern with numbers 1,12,123...
+// 8. PRINTING TRIANGLE PATTERN WITH NUMBERS 1,12,123...
 // int n = 4;
 // for(int i=0; i<n; i++) {
 //     for(int j=1; j<=i+1; j++){
@@ -161,7 +162,7 @@ int main() {  // main function
 // }
 // return 0;
 
-// 9. printing reverse triangle
+// 9. PRINTING REVERSE TRIANGLE
 // int n = 4;
 // for(int i=0; i<n; i++) {
 //     for(int j= i+1; j>0; j--) {
@@ -170,7 +171,7 @@ int main() {  // main function
 //     cout << endl;
 // }
 
-// 10. floyds triangle with numbers
+// 10.  FLOYDS TRIANGLE WITH NUMBERS
 // int n = 4;
 // int num = 1;
 // for(int i=0; i<n; i++) {
@@ -181,7 +182,7 @@ int main() {  // main function
 //     cout << endl;
 // }
 
-// 11. floyds triangle with characters
+// 11. FLOYDS TRIANGLE WITH CHARACTERS
 // int n = 4;
 // char ch = 'A';
 // for(int i=0; i<n; i++) {
@@ -192,7 +193,7 @@ int main() {  // main function
 //     cout << endl;
 // }
 
-// 12. reverse triangle with characters
+// 12. REVERSE TRIANGLE WITH NUMBERS
 // int n = 4;
 // char ch ='a';
 // for(int i=0; i<n; i++) {
@@ -206,7 +207,7 @@ int main() {  // main function
 //     cout << endl;
 // }
 
-// 13. inverted triangle with numbers
+// 13. INVERTED TRIANGLE WITH NUMBERS
 // int n = 4;
 // for(int i=0; i<n; i++) {
 //     //spaces
@@ -220,7 +221,7 @@ int main() {  // main function
 //     cout << endl;
 // }
 
-// 14. inverted triangle with characters
+// 14. INVERTED TRIANGLE WITH CHARACTERS
 // int n = 5;
 // char ch = 'A';
 // for(int i=0; i<n; i++) {
@@ -237,7 +238,7 @@ int main() {  // main function
 //     cout << endl;
 // }
 
-// 15. pyramid pattern
+// 15. PYRAMID PATTERN
 // int n = 4;
 // for(int i=0; i<n; i++) {
 //     //spaces: n-i-1
@@ -253,6 +254,92 @@ int main() {  // main function
 //         cout << j;
 //     }
 //     cout << endl;
+// }
+// return 0;
+
+// 16.HOLLOW DIAMOND PATTERN
+// int n = 4;
+
+//top part
+// for(int i=0; i<n; i++){
+//     // leading spaces
+//     for(int j=0; j<(n-i-1); j++){ //my mistake- i wrote j<=(n-i-1) which affect the position of middle star
+//         cout << " ";
+//     }
+//     cout << "*"; // first star //my mistake- i wrote this inside the inner loop which printed stars inside the spaces
+
+//     if(i!=0){
+//     //internal spaces
+//     for(int j=0; j<(2*i-1); j++){
+//         cout << " ";
+        
+//     }
+//     cout << "*"; // second star
+
+//     }
+//     cout << endl;   
+// }
+// //bottom part
+// for(int i=0; i<n-1; i++){ // 0 to n-2
+
+//     //leading spaces
+//     for(int j=0; j<i+1; j++){
+//         cout << " ";
+//     }
+//     cout << '*';
+
+//     //internal spaces
+//     if(i!=n-2){ //my mistake- i wrote n-1 Ab i goes from 0 to n-2. So i != n-1 is always true in this loop. Even at the last iteration i = n-2, it's still i != n-1.
+//         for(int j=0; j<(2*(n-i)-5); j++){
+//             cout << " ";
+//         }
+//         cout << '*';
+//     }
+//     cout << endl;
+// }
+// return 0;
+
+// 17. BUTTERFLY PATTERN
+// int n = 6;
+
+// //top part
+// for(int i=0; i<n; i++){
+
+//     // left triangle
+//     for(int j=0; j<i+1; j++){
+//         cout << '*';
+//     }
+
+//     // internal spaces
+//     for(int j=0; j<2*(n-i)-2; j++){ //my mistake- i used 2*3-i which is not related to n so we need to related formula with n otherwise when n will n chnage this wont work. This is hardcoded for n = 4 using the number 3. That works only when n = 4, because 2 * (3 - i) gives internal spaces from 4 to 0, matching the required spacing for n=4. But this will break if n is changed, and is not scalable.
+//         cout << " ";
+//     }
+
+//     // right triangle
+//     for(int j=0; j<i+1; j++){
+//         cout << "*";
+//     }
+//     cout << endl;    
+// }
+
+// //bottom part
+// for(int i=0; i<n; i++){
+
+//     // left inverted triangle
+//     for(int j=0; j<n-i; j++){ // if j is initiated with 1 then only we will write j<=n-i
+//         cout << "*";
+//     }
+
+//     // internal spaces
+//     for(int j=0; j<2*i; j++){
+//         cout << " ";
+//     }
+    
+//     // right inverted triangle
+//     for(int j=0; j<n-i; j++){
+//         cout << "*";
+//     }
+//     cout << endl;   
 // }
 // return 0;
 }
