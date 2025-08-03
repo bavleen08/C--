@@ -156,30 +156,64 @@ using namespace std;
 // }
 
 // WAF TO PRINT NTH FIBONACCI
-void printNthFibonacci(int n) {
-    if (n <= 0) {
-        cout << "INVALID INPUT" << endl;
-    }
+// void printNthFibonacci(int n) {
+//     if (n <= 0) {
+//         cout << "INVALID INPUT" << endl;
+//     }
 
-    int a = 0, b = 1;
-    if (n==1){
-        cout << a << endl;
-    } 
-    if (n==2) {
-        cout << b << endl;
-    }
+//     int a = 0, b = 1;
+//     if (n==1){
+//         cout << a << endl;
+//     } 
+//     if (n==2) {
+//         cout << b << endl;
+//     }
 
-    int next;
-    for(int i=3; i<=n; i++) {
-        next = a + b;
-        a = b;
-        b = next;
-    }
-    cout << b << endl;
-}
+//     int next;
+//     for(int i=3; i<=n; i++) {
+//         next = a + b;
+//         a = b;
+//         b = next;
+//     }
+//     cout << b << endl;
+// }
 
-int main() {
-    int n = 7;
-    printNthFibonacci(n);
-    return 0;
-}
+// int main() {
+//     int n = 7;
+//     printNthFibonacci(n);
+//     return 0;
+// }
+
+// DECIMAL TO BINARY
+// int decToBinary(int decNum) {
+//     int ans = 0, power = 1;
+//     while(decNum > 0) {
+//         int rem = decNum % 2;
+//         decNum /= 2;
+//         ans += rem * power;
+//         power *= 10;
+//     }
+//     return ans; // binary form
+// }
+// int main() {
+//     int decNum = 50;
+//     cout << "Binary Number: "<< decToBinary(decNum);
+//     return 0;
+// }
+
+// BINARY TO DECIMAL
+// int bintoDecimal(int binNum) {
+//     int ans = 0, power = 1;
+//     while(binNum > 0) {
+//         int rem = binNum % 10;
+//         binNum /= 10;
+//         ans += rem * power;
+//         power *= 2;
+//     }
+//     return ans; // decimal form
+// }
+// int main() {
+//     int binNum = 101;
+//     cout << "Decimal Number: " << bintoDecimal(binNum);
+//     return 0;
+// }
