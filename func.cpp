@@ -231,11 +231,38 @@ using namespace std;
 // }
 
 // DATA TYPE MODIFIERS
-int main() {
-    cout << sizeof(int) << endl;
-    cout << sizeof(long int) << endl;
-    cout << sizeof(long long int) << endl;
-    cout << sizeof(short int) << endl;
-    unsigned int x = -10; // according to us it is negative num but compiler is taking it as positive number which starts from 1(which was for msb but since it is unsigned so msb does not matter)
-    cout << x << endl;
-}
+// int main() {
+//     cout << sizeof(int) << endl;
+//     cout << sizeof(long int) << endl;
+//     cout << sizeof(long long int) << endl;
+//     cout << sizeof(short int) << endl;
+//     unsigned int x = -10; // according to us it is negative num but compiler is taking it as positive number which starts from 1(which was for msb but since it is unsigned so msb does not matter)
+//     cout << x << endl;
+// }
+
+// H.W Que 1- FIND IF NUMBER IS POWER OF 2
+// with loops
+// #include <cmath>
+// bool powerOf2(int n) {
+//     int num = 1;
+    // while(num < n) {
+    //     if(n == pow(2, num)){ // my mistake- i used 2**num, is not the way to write "2 raised to the power num". The ** operator is not defined for exponentiation like in Python.Use pow() from <cmath> (returns a double)
+    //         return true;
+    //     }
+    //     num++;
+    // }
+
+// without loops- using bitwise op
+//     while(num < n){
+//         if(n == (1 << num)){
+//             return true;
+//         }
+//         num++;
+//     }
+//     //num++; // my mistake- This is outside the loop, so num never changes, the num++ is placed after the while loop, which means it's never incremented, causing an infinite loop if n != pow(2, 1).
+//     return false;
+// }
+// int main(){
+//     int n = 64;
+//     cout << powerOf2(n);
+// }
