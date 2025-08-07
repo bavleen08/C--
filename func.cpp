@@ -1,4 +1,7 @@
 #include <iostream>
+#include <climits>
+#include <algorithm>
+#include <string>
 using namespace std;
 
 // // FUNCTION DEFINITION
@@ -266,3 +269,47 @@ using namespace std;
 //     int n = 64;
 //     cout << powerOf2(n);
 // }
+
+// SMALLEST AND LARGEST IN ARRAY
+// int main(){
+//     int nums[] = {5, 6, 1, 5};
+//     int size = 4;
+//     int smallest = INT_MAX;
+//     int idx = -1;
+//     for(int i=0; i<size; i++){
+//         smallest = min(nums[i], smallest);
+//     }
+//     cout << "smallest:" << smallest;
+//     return 0;
+// }
+
+// WAF TO REVERSE INT
+int reverseInteger(int num) {
+    bool isNegative = false;
+    if (num < 0) {
+        isNegative = true;
+        num = -num; // makes it positive
+    }
+    
+    //Convert to string
+    string str = to_string(num);
+
+    //reverse the string
+    reverse(str.begin(), str.end());
+
+    //back to int
+    int reversedNum = stoi(str);
+
+    if (isNegative) {
+        reversedNum = -reversedNum;
+    }
+    return reversedNum;
+}
+//driver code
+int main(){
+    int num;
+    cout << "Enter number:";
+    cin >> num;
+    cout << "Reversed Integer: " << reverseInteger(num);
+    return 0;
+}
