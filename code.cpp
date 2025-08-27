@@ -1,4 +1,5 @@
-#include <iostream>
+#include <iostream> // we can give space here before < bcoz c++ compiler genereally ignore all the whitespaces, tabs
+#include <iomanip>
 using namespace std;
 
 int main() {  // main function
@@ -342,4 +343,18 @@ int main() {  // main function
 //     cout << endl;   
 // }
 // return 0;
+
+// float PI = 3.14159265359;
+// double PI2 = 3.14159265359;
+// cout << setprecision(12) <<"PI = " << PI <<endl; 
+// cout << setprecision(12) << "PI2 = " << PI2;
+
+float penCost,pencilCost,eraserCost;
+cin>>penCost;
+cin>>pencilCost;
+cin>>eraserCost;
+float totCost=penCost+pencilCost+eraserCost;
+cout<<"total="<<totCost<<endl;
+cout<<"totalwithGST="<<(totCost+(0.18*totCost))<<endl;
+return 0;
 }
