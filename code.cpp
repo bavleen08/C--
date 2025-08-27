@@ -43,7 +43,7 @@ int main() {  // main function
     // cout << "enter n: ";
     // cin >> n;
     // int i;
-    // for(i=2; i*i<=n; i++){ //i<=n-1
+    // for(i=2; i*i<=n; i++){ //i<=n-1 //O(underroot n approach) another way  2to n-1
     //     if(n%i==0){
     //         cout << "It is non prime";
     //         //break;
