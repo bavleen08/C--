@@ -349,12 +349,64 @@ int main() {  // main function
 // cout << setprecision(12) <<"PI = " << PI <<endl; 
 // cout << setprecision(12) << "PI2 = " << PI2;
 
-float penCost,pencilCost,eraserCost;
-cin>>penCost;
-cin>>pencilCost;
-cin>>eraserCost;
-float totCost=penCost+pencilCost+eraserCost;
-cout<<"total="<<totCost<<endl;
-cout<<"totalwithGST="<<(totCost+(0.18*totCost))<<endl;
+// float penCost,pencilCost,eraserCost;
+// cin>>penCost;
+// cin>>pencilCost;
+// cin>>eraserCost;
+// float totCost=penCost+pencilCost+eraserCost;
+// cout<<"total="<<totCost<<endl;
+// cout<<"totalwithGST="<<(totCost+(0.18*totCost))<<endl;
+
+//approach 1
+int n = 15;
+// for(int i=1; i<=n; i++){
+//         if(i%3 == 0 && i%5 == 0){
+//         cout << "FIZZ BUZZ"<< endl;
+//     }
+//     else if(i%3 == 0){
+//         cout << "FIZZ"<<endl;
+//     }
+//     else if(i%5 == 0){
+//         cout << "BUZZ"<< endl;
+//     }
+//     else{
+//         cout << i << endl;
+//     }
+// }
+
+// approach 2
+// int counter3 = 0, counter5 = 0;
+// for (int i = 1; i <= n; i++ ){
+//     counter3++ ; counter5++ ;
+//     if (counter3 == 3 && counter5 == 5){
+//         cout << "FizzBuzz"<< endl;
+//         counter3 = 0; counter5 = 0;
+//     }
+//     else if (counter3 == 3){
+//         cout << "Fizz"<<  endl;
+//         counter3 = 0;
+//     }
+//     else if (counter5 == 5){
+//         cout << "Buzz"<< endl;
+//         counter5 = 0;
+//     }
+//     else{
+//         cout << i << endl;
+//     }
+// }
+
+// income tax calculator
+int income;
+float tax;
+cout << "Enter income(in lakhs): ";
+cin >> income;
+if(income < 5){
+    tax = 0;
+} else if(income < 10){
+    tax = 0.2 * income;
+} else{
+    tax = 0.3 * income;
+}
+cout << "Tax = "<< tax<<"%"<< "or" << tax * 100000 << endl;
 return 0;
 }
