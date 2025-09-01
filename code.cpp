@@ -358,7 +358,7 @@ int main() {  // main function
 // cout<<"totalwithGST="<<(totCost+(0.18*totCost))<<endl;
 
 //approach 1
-int n = 15;
+// int n = 15;
 // for(int i=1; i<=n; i++){
 //         if(i%3 == 0 && i%5 == 0){
 //         cout << "FIZZ BUZZ"<< endl;
@@ -396,17 +396,138 @@ int n = 15;
 // }
 
 // income tax calculator
-int income;
-float tax;
-cout << "Enter income(in lakhs): ";
-cin >> income;
-if(income < 5){
-    tax = 0;
-} else if(income < 10){
-    tax = 0.2 * income;
-} else{
-    tax = 0.3 * income;
+// int income;
+// float tax;
+// cout << "Enter income(in lakhs): ";
+// cin >> income;
+// if(income < 5){
+//     tax = 0;
+// } else if(income < 10){
+//     tax = 0.2 * income;
+// } else{
+//     tax = 0.3 * income;
+// }
+// cout << "Tax = "<< tax<<"%"<< "or" << tax * 100000 << endl;
+
+//  switch statement
+// int day = 6;
+// switch(day){
+//     case 1 : cout << "Monday"<<endl;
+//              break;
+//     case 2 : cout << "Tuesday"<<endl;
+//              break;
+//     case 3 : cout << "Wednesday"<<endl;
+//              break;
+//     case 4 : cout << "Thursday"<<endl;
+//              break;
+//     case 5 : cout << "Friday"<<endl;
+//              break;
+//     case 6 : cout << "Saturday"<<endl;
+//              break;
+//     case 7 : cout << "Sunday"<<endl;
+//              break;
+//     default : cout << "Invalid Day"<< endl;
+// }
+
+// calculator using switch
+// int a, b;
+// char op;
+
+// cout << "Enter a: ";
+// cin >> a;
+// cout << "Enter b: ";
+// cin >> b;
+// cout << "Enter an operator(+,-,*,/): ";
+// cin >> op;
+
+// switch (op){
+// case '+': cout << "Addition is = "<< a+b << endl;
+//           break;
+// case '-': cout << "Subtraction is = "<< a-b << endl;
+//           break;
+// case '*': cout << "Multiplication is = "<< a*b << endl;
+//           break;
+// case '/': cout << "Division is = "<< a/b << endl;
+//           break;
+// default : cout << "Invalid Operator" <<endl;
+//           //no need for break keyword because eventually nothing is gonna print after this
+// }
+
+// leap year or not
+// int year;
+// cin >> year;
+// if (year % 400 == 0) {
+//     cout << "It is a LEAP year.";
+// } else if (year % 100 == 0) {
+//     cout << "It is not a leap year.";
+// } else if (year % 4 == 0) {
+//     cout << "It is a LEAP year.";
+// } else {
+//     cout << "It is NOT a leap year.";
+//} //leap year ki defination ye hai ki  year 4 se divisible hona chahiye lekin agar vo century year hai (yani 100 se divisible hai) to use 400 se bhi divisible hona padega nhi to vo leap year nhi hoga for ex 1900 ye 4 se divisible hai to ye leap year hona chahiye but vo 100 se divisible hai but 400 se nhi isliye 1900 leap year nhi hai
+
+// ARMSTRONG NUMBER
+// int n, armstrongNum;
+// cin >> n;
+// int num = n; // creating a copy
+// int dig1 = num % 10;
+// num /= 10;
+// int dig2 = num % 10;
+// num /= 10;
+// int dig3 = num;
+
+// armstrongNum = (dig1*dig1*dig1) + (dig2*dig2*dig2) + (dig3*dig3*dig3);
+// if (armstrongNum == n) {
+//     cout << "This is an armstrong number.";
+// } else {
+//     cout << "This is not an armstrong number.";
+// }
+
+// SUM OF DIGITS
+// int num = 10829;
+// int lastDigit;
+// int sumOFdigits = 0;
+// while(num > 0) {
+//     lastDigit = num % 10;
+//     num /= 10;
+//     sumOFdigits += lastDigit;
+// }
+// cout << sumOFdigits;
+
+// SUM OF ODD DIGITS
+// int num = 10829;
+// int lastDigit;
+// int sumOFdigits = 0;
+// while(num > 0) {
+//     lastDigit = num % 10;
+//     num /= 10;
+//     if (lastDigit % 2 != 0) { //odd
+//         sumOFdigits += lastDigit;
+//     } else {
+//         continue;
+//     }
+// }
+// cout << sumOFdigits;
+
+// REVERSE NUMBER
+// int num = 10829;
+// int lastDigit;
+// int sumOFdigits = 0;
+// while(num > 0) {
+//     lastDigit = num % 10;
+//     cout << lastDigit;
+//     num /= 10;
+// }
+
+// REVERSE NUMBER WITHOUT CALLING EACH DIGIT
+int num = 523;
+int lastDigit;
+int power = 0;
+while(num > 0) {
+    lastDigit = num % 10;
+    power = (power * 10) + lastDigit;
+    num /= 10;
 }
-cout << "Tax = "<< tax<<"%"<< "or" << tax * 100000 << endl;
+cout << power;
 return 0;
 }
