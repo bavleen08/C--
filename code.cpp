@@ -1,5 +1,6 @@
 #include <iostream> // we can give space here before < bcoz c++ compiler genereally ignore all the whitespaces, tabs
 #include <iomanip>
+#include <cmath>
 using namespace std;
 
 int main() {  // main function
@@ -520,14 +521,51 @@ int main() {  // main function
 // }
 
 // REVERSE NUMBER WITHOUT CALLING EACH DIGIT
-int num = 523;
-int lastDigit;
-int power = 0;
-while(num > 0) {
-    lastDigit = num % 10;
-    power = (power * 10) + lastDigit;
-    num /= 10;
-}
-cout << power;
+// int num = 12345;
+// int lastDigit;
+// int power = 0;
+// while(num > 0) {
+//     lastDigit = num % 10;
+//     power = (power * 10) + lastDigit;
+//     num /= 10;
+// }
+// cout << power;
+
+// BREAK & CONTINUE
+// int n;
+// do {
+//     cout << "enter number:";
+//     cin >> n;
+//     if(n % 10 == 0){
+//         //break;
+//         continue;
+//     }
+//     cout << "your entered "<< n<< endl;
+// } while(true); // infinite loop
+
+//  PRIME OR NOT
+// int n;
+// cin >> n;
+// bool isPrime = true;
+// for(int i = 2; i <= sqrt(n); i++){
+//     if(n % i == 0){
+//         isPrime = false;
+//         break;
+//     } 
+// }
+// if (isPrime){
+//     cout << "PRIME";
+// } else {
+//     cout << "NOT PRIME";
+// }
+
+// FACTORIAL
+// int n;
+// int factorialOfn = 1;
+// cin >> n;
+// for(int i=1; i<=n; i++){ 
+//     factorialOfn *= i;
+// }
+// cout << "Factorial is "<< factorialOfn;
 return 0;
 }
