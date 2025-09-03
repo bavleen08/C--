@@ -567,5 +567,47 @@ int main() {  // main function
 //     factorialOfn *= i;
 // }
 // cout << "Factorial is "<< factorialOfn;
+
+// int n;
+// cin >> n;
+// int lastdig;
+// int res = 0;
+// int num = n;
+// while(num > 0){
+//     lastdig = num % 10;
+//     num  = num / 10;
+//     res += lastdig * lastdig * lastdig; 
+// }
+// if(n == res){
+//     cout << "armstrong number";
+// } else {
+//     cout << "not a armstrong number";
+// }
+
+// int n;
+// cin >> n;
+// for(int i =2; i <= n; i++){
+//     int curr = i;
+//     bool isPrime = true;
+//     for(int j=2; j*j<=i; j++){
+//         if(curr % j ==0){
+//             isPrime = false;
+//         }
+//     }
+//     if(isPrime){
+//     cout << curr << " ";
+// }
+// }
+
+int n = 6;
+int first = 0, second = 1;
+cout << first << " "<< second<< " ";
+for(int i =2; i<n; i++){
+    int third = first + second;
+    cout << third<<" ";
+    first = second;
+    second = third;
+}
+cout << endl;
 return 0;
 }
