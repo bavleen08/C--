@@ -568,6 +568,7 @@ int main() {  // main function
 // }
 // cout << "Factorial is "<< factorialOfn;
 
+// ARMSTRONG NUM
 // int n;
 // cin >> n;
 // int lastdig;
@@ -584,6 +585,7 @@ int main() {  // main function
 //     cout << "not a armstrong number";
 // }
 
+// PRIME
 // int n;
 // cin >> n;
 // for(int i =2; i <= n; i++){
@@ -599,15 +601,65 @@ int main() {  // main function
 // }
 // }
 
-int n = 6;
-int first = 0, second = 1;
-cout << first << " "<< second<< " ";
-for(int i =2; i<n; i++){
-    int third = first + second;
-    cout << third<<" ";
-    first = second;
-    second = third;
+// FIBONACCI
+// int n = 6;
+// int first = 0, sec*ond = 1;
+// cout << first << " "<< second<< " ";
+// for(int i =2; i<n; i++){
+//     int third = first + second;
+//     cout << third<<" ";
+//     first = second;
+//     second = third;
+// }
+// cout << endl;
+
+
+// HOLLOW RECTANGLE
+// int n = 10; 
+// for(int i=1; i<=n; i++){
+//     cout << "*";
+//     for(int j=1; j<=n-1;j++){
+//         if(i == 1 || i == n){
+//             cout << "*";
+//         } else{
+//             cout << " ";
+//         }
+        
+//     }
+//     cout << "*";
+//     cout << endl;
+// }
+
+// INVERTED STAR PATTERN
+// int n=4;
+// for(int i=1; i<=n; i++){
+//     for(int j=1; j<=n-i; j++){
+//         cout << " ";
+//     }
+//     for(int j=1; j<=i; j++){
+//         cout << "*";
+//     }
+//     cout << endl;
+// }
+
+int n = 4;
+for(int i=1; i<=n; i++){
+    for(int j=1; j<=n-i; j++){
+        cout << " ";
+    }
+    for(int j=1; j<=(2*i)-1; j++){
+        cout << "*";
+    }
+    cout << endl;
 }
-cout << endl;
+for(int i=n; i>=1; i--){
+    for(int j=1; j<=n-i; j++){
+        cout << " ";
+    }
+    for(int j=1; j<=(2*i)-1; j++){
+        cout << "*";
+    }
+    cout << endl;
+}
 return 0;
 }
