@@ -3,6 +3,36 @@
 #include <cmath>
 using namespace std;
 
+int factorial(int a){
+    int fact = 1;
+    for(int i =1; i<=a; i++){
+        fact *= i;
+    }
+    return fact;
+}
+int binomial(int n, int r){
+    int res = factorial(n) / (factorial(r) * factorial(n-r));
+    return res;
+}
+bool isPrime(int n){
+    if(n==1){
+        return false;
+    }
+    for(int i=2; i*i <= n; i++){
+        if(n % i == 0){
+            return false;
+        }
+    }
+    return true;
+}
+void printprime(int n){
+    for(int i=2; i<=n; i++){
+        if (isPrime(i)){
+            cout << i <<endl;
+        }
+    }
+    
+}
 int main() {  // main function
     // cout << "hello world"<<endl <<"hi there"; // std::cout << "hello"
     
@@ -642,24 +672,56 @@ int main() {  // main function
 //     cout << endl;
 // }
 
-int n = 4;
-for(int i=1; i<=n; i++){
-    for(int j=1; j<=n-i; j++){
-        cout << " ";
-    }
-    for(int j=1; j<=(2*i)-1; j++){
-        cout << "*";
-    }
-    cout << endl;
-}
-for(int i=n; i>=1; i--){
-    for(int j=1; j<=n-i; j++){
-        cout << " ";
-    }
-    for(int j=1; j<=(2*i)-1; j++){
-        cout << "*";
-    }
-    cout << endl;
-}
+// DIAMOND PATTERN
+// int n = 4;
+// for(int i=1; i<=n; i++){
+//     for(int j=1; j<=n-i; j++){
+//         cout << " ";
+//     }
+//     for(int j=1; j<=(2*i)-1; j++){
+//         cout << "*";
+//     }
+//     cout << endl;
+// }
+// for(int i=n; i>=1; i--){
+//     for(int j=1; j<=n-i; j++){
+//         cout << " ";
+//     }
+//     for(int j=1; j<=(2*i)-1; j++){
+//         cout << "*";
+//     }
+//     cout << endl;
+// }
+
+// int n=4;
+// //top part
+// for(int i=1; i<=n; i++){
+//     for(int j=1; j<=i; j++){
+//         cout << "*";
+//     }
+//     for(int j=1; j<=2*(n-i); j++){
+//         cout << " ";
+//     }
+//     for(int j=1; j<=i; j++){
+//         cout << "*";
+//     }
+//     cout << endl;
+// }
+// //bottom part
+// for(int i=n; i>=1; i--){
+//     for(int j=1; j<=i; j++){
+//         cout << "*";
+//     }
+//     for(int j=1; j<=2*(n-i); j++){
+//         cout << " ";
+//     }
+//     for(int j=1; j<=i; j++){
+//         cout << "*";
+//     }
+//     cout << endl;
+// }
+
+printprime(11);
+
 return 0;
 }
