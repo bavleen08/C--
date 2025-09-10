@@ -25,13 +25,44 @@ bool isPrime(int n){
     }
     return true;
 }
-void printprime(int n){
+void allprime(int n){
     for(int i=2; i<=n; i++){
         if (isPrime(i)){
             cout << i <<endl;
         }
     }
     
+}
+int reverse(int n){
+    int res =0;
+    while(n > 0){
+    int lastdig = n % 10;
+    res = 10*res + lastdig;
+    n /= 10;
+    }
+    return res;
+}
+bool ispalindrome(int num){
+    int revnum = reverse(num);
+    return num == revnum;
+}
+int largest(int a, int b, int c){
+    return max(a, max(b,c));
+}
+char next(char ch){
+    return ch + 1;
+}
+void decTobin(int decNum){
+    int n = decNum;
+    int pow = 1;
+    int binNum = 0;
+    while(n > 0){
+        int rem = n % 2;
+        binNum += rem * pow;
+        pow *= 10;
+        n /= 2;
+    }
+    cout << binNum;
 }
 int main() {  // main function
     // cout << "hello world"<<endl <<"hi there"; // std::cout << "hello"
@@ -720,8 +751,63 @@ int main() {  // main function
 //     }
 //     cout << endl;
 // }
+//cout << next('x');
 
-printprime(11);
+// TRIANGLE PATTERN WITH 01
+// int n=5;
+// bool val = true;
+// for(int i=1; i<=n; i++){
+//     for(int j=1; j<=i; j++){
+//         cout << val;
+//         val = !val;
+//     }
+//     cout << endl;
+// }
 
+// RHOMBUS PATTERN
+// int n = 5;
+// for(int i=1; i<=n; i++){
+//     for(int j=1; j<=n-i; j++){
+//         cout << " ";
+//     }
+//     for(int j=1; j<=n; j++){
+//         cout << "*";
+//     }
+//     cout << endl;
+// }
+
+// for(int i=n; i>0; i--){
+//     for(int j=1; j<=i; j++){
+//         cout << " ";
+//     }
+//     for(int j=1; j<=n; j++){
+//         cout << "*";
+//     }
+//     cout << endl;
+// }
+
+// PALINDROMIC PATTERN WITH NUMBERS
+// int n=6; 
+// for(int i=1; i<=n; i++){
+//     // spaces
+//     for(int j=1; j<= n-i; j++){
+//         cout << " ";
+//     }
+//     // backward nums
+//     for(int j=i; j>=1; j--){
+//         cout << j;
+//     }
+//     // forward nums
+//     for(int j=2; j<=i; j++){
+//         cout << j;
+//     }
+//     cout << endl;
+// }
+
+int a;
+int *ptr;
+a=7;
+ptr= &a;
+cout<<*ptr;
 return 0;
 }
