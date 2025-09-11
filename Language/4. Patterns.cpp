@@ -1,3 +1,8 @@
+#include <iostream> 
+#include <iomanip>
+#include <cmath>
+using namespace std;
+
 // 1. PATTERN PRINTING
 // int n = 6;
 // for(int i=1 ; i<=n; i++) {
@@ -269,7 +274,7 @@
 // }
 // return 0;
 
-// HOLLOW RECTANGLE
+// 18. HOLLOW RECTANGLE
 // int n = 10; 
 // for(int i=1; i<=n; i++){
 //     cout << "*";
@@ -285,7 +290,7 @@
 //     cout << endl;
 // }
 
-// INVERTED STAR PATTERN
+// 19. INVERTED STAR PATTERN
 // int n=4;
 // for(int i=1; i<=n; i++){
 //     for(int j=1; j<=n-i; j++){
@@ -297,7 +302,7 @@
 //     cout << endl;
 // }
 
-// DIAMOND PATTERN
+// 20. DIAMOND PATTERN
 // int n = 4;
 // for(int i=1; i<=n; i++){
 //     for(int j=1; j<=n-i; j++){
@@ -347,7 +352,7 @@
 // }
 //cout << next('x');
 
-// TRIANGLE PATTERN WITH 01
+// 21. TRIANGLE PATTERN WITH 01
 // int n=5;
 // bool val = true;
 // for(int i=1; i<=n; i++){
@@ -358,7 +363,7 @@
 //     cout << endl;
 // }
 
-// RHOMBUS PATTERN
+// 22. RHOMBUS PATTERN
 // int n = 5;
 // for(int i=1; i<=n; i++){
 //     for(int j=1; j<=n-i; j++){
@@ -380,7 +385,7 @@
 //     cout << endl;
 // }
 
-// PALINDROMIC PATTERN WITH NUMBERS
+// 23. PALINDROMIC PATTERN WITH NUMBERS
 // int n=6; 
 // for(int i=1; i<=n; i++){
 //     // spaces

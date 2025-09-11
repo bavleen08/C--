@@ -1,4 +1,8 @@
-// ARMSTRONG NUMBER
+#include <iostream>
+using namespace std;
+
+int main(){
+    // ARMSTRONG NUMBER 1
 // int n, armstrongNum;
 // cin >> n;
 // int num = n; // creating a copy
@@ -15,7 +19,7 @@
 //     cout << "This is not an armstrong number.";
 // }
 
-// ARMSTRONG NUM
+// ARMSTRONG NUM 2
 // int n;
 // cin >> n;
 // int lastdig;
@@ -31,3 +35,5 @@
 // } else {
 //     cout << "not a armstrong number";
 // }
+return 0;
+}

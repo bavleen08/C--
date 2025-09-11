@@ -1,5 +1,8 @@
+#include <iostream>
+using namespace std;
 
-// SUM OF DIGITS
+int main(){
+    // SUM OF DIGITS
 // int num = 10829;
 // int lastDigit;
 // int sumOFdigits = 0;
@@ -24,3 +27,5 @@
 //     }
 // }
 // cout << sumOFdigits;
+return 0;
+}

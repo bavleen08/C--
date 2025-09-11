@@ -1,3 +1,6 @@
+#include <iostream>
+using namespace std;
+
 int reverse(int n){
     int res =0;
     while(n > 0){
@@ -10,4 +13,8 @@ int reverse(int n){
 bool ispalindrome(int num){
     int revnum = reverse(num);
     return num == revnum;
+}
+
+int main(){
+    return 0;
 }

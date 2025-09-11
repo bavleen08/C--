@@ -1,3 +1,4 @@
+#include <climits>
 // SMALLEST AND LARGEST IN ARRAY
 int main(){
     int nums[] = {5, 6, 1, 5};

@@ -1,24 +1,29 @@
+#include <iostream> 
+#include <cmath>
+using namespace std;
+
 // BITWISE OPERATORS  = & ^ | << >>
-// int main() {
-//     int a=6, b=10;
-//     cout << (a & b) << endl; //2
-//     cout << (a | b) << endl; //14
-//     cout << (a ^ b) << endl; //12
-//     cout << (10 << 2) << endl; //40
-//     cout << (10 >> 1) << endl; //5
-//     cout << (5 % 2 * 4) << endl;
-//     return 0;
-// }
+int main() {
+    int a=6, b=10;
+    cout << (a & b) << endl; //2
+    cout << (a | b) << endl; //14
+    cout << (a ^ b) << endl; //12
+    cout << (10 << 2) << endl; //40
+    cout << (10 >> 1) << endl; //5
+    cout << (5 % 2 * 4) << endl;
+    return 0;
+}
 
 // DATA TYPE MODIFIERS
-// int main() {
-//     cout << sizeof(int) << endl;
-//     cout << sizeof(long int) << endl;
-//     cout << sizeof(long long int) << endl;
-//     cout << sizeof(short int) << endl;
-//     unsigned int x = -10; // according to us it is negative num but compiler is taking it as positive number which starts from 1(which was for msb but since it is unsigned so msb does not matter)
-//     cout << x << endl;
-// }
+int main() {
+    cout << sizeof(int) << endl;
+    cout << sizeof(long int) << endl;
+    cout << sizeof(long long int) << endl;
+    cout << sizeof(short int) << endl;
+    unsigned int x = -10; // according to us it is negative num but compiler is taking it as positive number which starts from 1(which was for msb but since it is unsigned so msb does not matter)
+    cout << x << endl;
+    return 0;
+}
 
 // DECIMAL TO BINARY
 int decToBinary(int decNum) {
@@ -43,4 +48,8 @@ int bintoDecimal(int binNum) {
         power *= 2;
     }
     return ans; // decimal form
+}
+
+int main(){
+    return 0;
 }

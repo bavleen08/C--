@@ -95,7 +95,7 @@ int main() {  // main function
 //     cout << "your entered "<< n<< endl;
 // } while(true); // infinite loop
 
-// PRECISION
+// PRECISION (include iomanip)
 // float PI = 3.14159265359;
 // double PI2 = 3.14159265359;
 // cout << setprecision(12) <<"PI = " << PI <<endl; 

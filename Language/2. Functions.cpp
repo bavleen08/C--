@@ -1,7 +1,4 @@
 #include <iostream>
-#include <climits>
-#include <algorithm>
-#include <string>
 using namespace std;
 
 // // FUNCTION DEFINITION

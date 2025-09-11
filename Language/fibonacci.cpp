@@ -1,17 +1,8 @@
-// FIBONACCI
-// int n = 6;
-// int first = 0, second = 1;
-// cout << first << " "<< second<< " ";
-// for(int i =2; i<n; i++){
-//     int third = first + second;
-//     cout << third<<" ";
-//     first = second;
-//     second = third;
-// }
-// cout << endl;
+#include <iostream>
+using namespace std;
 
 // WAF TO PRINT NTH FIBONACCI
-void printNthFibonacci(int n) {
+void printNthFibonacci(int n){
     if (n <= 0) {
         cout << "INVALID INPUT" << endl;
     }
@@ -31,4 +22,9 @@ void printNthFibonacci(int n) {
         b = next;
     }
     cout << b << endl;
+}
+
+int main(){
+
+return 0;
 }
