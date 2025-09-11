@@ -25,6 +25,6 @@ void printNthFibonacci(int n){
 }
 
 int main(){
-
+printNthFibonacci(5);
 return 0;
 }
