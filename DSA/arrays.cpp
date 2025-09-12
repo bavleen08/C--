@@ -33,20 +33,74 @@ int printArr(int nums[], int n){ // pointer to the array
     }
     cout << endl;
 }
-int main(){
-    int arr[] = {1, 2, 3, 4, 5};
-    // cout << arr << endl; // expectation: this will give the whole array, reality: array is converted to a pointer which is pointing at the 0th index of array and giving its address.
-    // cout << *arr << endl; // printed 1 coz we defrence the pointer.
-    // cout << *(arr+1) << endl; // arr[1]
-    // cout << *(arr+2) << endl;    // arr[2]
-    // cout << arr + 1 << endl; // +1 does not mean that address value is jumping by 1, its actually jumping by block of integer like 0,4,8...
-    // cout << arr + 2 << endl;
-    //func2(arr); // passing array name is eq. to passing the pointer
-    //cout << arr[0] << endl; 
+// int main(){
+//     int arr[] = {1, 2, 3, 4, 5};
+//     // cout << arr << endl; // expectation: this will give the whole array, reality: array is converted to a pointer which is pointing at the 0th index of array and giving its address.
+//     // cout << *arr << endl; // printed 1 coz we defrence the pointer.
+//     // cout << *(arr+1) << endl; // arr[1]
+//     // cout << *(arr+2) << endl;    // arr[2]
+//     // cout << arr + 1 << endl; // +1 does not mean that address value is jumping by 1, its actually jumping by block of integer like 0,4,8...
+//     // cout << arr + 2 << endl;
+//     //func2(arr); // passing array name is eq. to passing the pointer
+//     //cout << arr[0] << endl; 
 
-    int n = sizeof(arr) / sizeof(int); // 5
-    cout << sizeof(arr) << endl; // 20
+//     int n = sizeof(arr) / sizeof(int); // 5
+//     cout << sizeof(arr) << endl; // 2
+//     printArr(arr, n);
+//     return 0;
+// }
 
-    printArr(arr, n);
+// LINEAR SEARCH ALGORITHM
+// int linearSearch(int *arr, int n, int key){
+//     for(int i=0; i<n; i++){
+//         if(arr[i] == key){
+//             return i;
+//         }
+//     }
+//     return -1;
+// }
+// int main(){
+//     int arr[] = {2, 4, 6, 8, 10, 12, 14};
+//     int n = sizeof(arr) / sizeof(int);
+//     cout << linearSearch(arr, n, 20);
+// }
 
+// REVERSE AN ARRAY
+// approach 1- with extra space
+
+void revarr(int *arr, int n){
+    for(int i=0; i<n; i++){
+        cout << arr[i] << ",";
+    }
+    cout << endl;
 }
+// int main(){
+//     int arr[] = {3,2,7,8,9};
+//     int n = sizeof(arr) / sizeof(int);
+//     int CopyArr[n];
+//     for(int i=0; i<n; i++){
+//         int j = n-i-1;
+//         CopyArr[i] = arr[j];
+//     }
+//     for(int i=0; i<n; i++){
+//         arr[i] = CopyArr[i];
+//     }
+//     revarr(arr, n);
+//     return 0;
+// }
+
+// approach 2- without extra space
+int main(){
+    int arr[] = {1,2,3,4};
+    int n = sizeof(arr) / sizeof(int);
+    int start = 0, end = n-1;
+
+    while(start < end){
+        swap(arr[start], arr[end]); // temp =a, a=b,b=temp
+        start ++;
+        end --;
+    }
+    revarr(arr, n);
+    return 0;
+}
+
