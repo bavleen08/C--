@@ -46,10 +46,35 @@ void changeA(int &a){
     a = 50;
     cout << a << endl;
 }
+// int main(){
+//     int a = 5;
+//     //changeA(&a);
+//     changeA(a);
+//     cout << a << endl;
+//     return 0;
+// }
+
+// POINTER ARITHMETIC
 int main(){
-    int a = 5;
-    //changeA(&a);
-    changeA(a);
-    cout << a << endl;
-    return 0;
+    // int a = 5;
+    // int *ptr = &a;
+    // cout << ptr << endl;
+    // ptr++;                  //increment
+    // cout << ptr << endl;
+    // ptr--;                  // decrement
+    // cout << ptr << endl;
+    // cout << ptr+3 << endl;   // addition with constants
+    // int *ptr2 = ptr + 3;
+    // cout << ptr2 << endl;
+    // cout << ptr << endl;
+    // cout << ptr2-ptr<< endl;     // subtraction with pointers
+    int arr[5] = {1,2,3,4,5};
+    int *ptr = arr;  //1
+    int *ptr2 = ptr + 3; //4
+    cout << *ptr2 << endl;
+    cout << *ptr << endl;
+    cout << ptr2-ptr << endl;
+    cout << (ptr2<ptr) << endl;     // comparison
+     
+
 }
