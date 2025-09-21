@@ -2,6 +2,7 @@
 #include <climits>
 using namespace std;
 
+// PRINTING SUBARRAYS
 void printSubarrays(int *arr, int n){
     for(int start = 0; start <n; start ++){
         for(int end=start; end<n; end++){
@@ -66,5 +67,5 @@ int main(){
     int n = sizeof(arr)/sizeof(int);
     //printSubarrays(arr , n);
     maxSubarraySum3(arr, n);
-
+    return 0;
 }

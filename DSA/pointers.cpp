@@ -75,6 +75,5 @@ int main(){
     cout << *ptr << endl;
     cout << ptr2-ptr << endl;
     cout << (ptr2<ptr) << endl;     // comparison
-     
-
+    return 0;    
 }
