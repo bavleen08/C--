@@ -2,6 +2,10 @@
 using namespace std;
 
 // FIND THE TARGET AND PRINT ITS INDEX
+
+// APPROACH 1= linear search
+
+// APPROACH 2= binary search
 int findTarget(int *nums, int n, int tar){
     int st = 0; int end = n-1;
     while(st <= end){
@@ -25,7 +29,7 @@ int findTarget(int *nums, int n, int tar){
             }
         }
     }
-    return -1;
+    return -1;       // TC= O(logn)
 }
 int main(){
     int nums[5] = {7,8,9,5,6};
