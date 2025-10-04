@@ -3,6 +3,7 @@
 using namespace std;
 
 // FIND TOTAL WATER TRAPPED
+
 int trapRainwater(int *height, int n){
     int leftmax[20000], rightmax[20000];
     leftmax[0] = height[0];
@@ -26,9 +27,30 @@ int trapRainwater(int *height, int n){
     return watertrapped;  // TC = O(n)
 }
 
+// OPTIMISED APPROACH
+int rainwater(int height[], int n){
+    int lmax = height[0], rmax = height[n-1];
+    int low = 1, high = n-2;
+    int water = 0;
+    while(low <= high)
+    {
+        lmax = max(lmax, height[low]);
+        rmax = max(rmax, height[high]);
+        if(lmax < rmax){
+            water += (lmax - height[low]);
+            low++;
+        } else {
+            water += (rmax - height[high]);
+            high--;
+        }
+    }
+    return water;
+}
+
 int main(){
     int height[7] = {4,2,0,6,3,2,5};
     int n = sizeof(height) / sizeof(int);
     trapRainwater(height, n);
+    cout << "Water trapped is: " << rainwater(height,n) << endl;
     return 0;
 }

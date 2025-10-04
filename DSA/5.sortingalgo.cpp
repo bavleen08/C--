@@ -11,8 +11,8 @@ void print(int arr[], int n){
 
 // BUBBLE SORT ALGORITHM
 void bubbleSort(int *arr, int n){
-    bool isSwap = false;
     for(int i=0; i<n-1; i++){
+        bool isSwap = false; // reset before each pass
         for(int j=0; j<n-i-1; j++){
             if(arr[j] > arr[j+1]){
                 swap(arr[j], arr[j+1]);
@@ -47,7 +47,7 @@ void insertionSort(int arr[], int n){
         int curr = arr[i];
         int prev = i-1;
         while (prev >=0 && arr[prev] > curr){
-            swap(arr[prev], arr[prev+1]);
+            swap(arr[prev], arr[prev+1]); // optimization - arr[prev+1] = arr[prev]
             prev--;
         }
         arr[prev+1] = curr;
@@ -59,16 +59,14 @@ void insertionSort(int arr[], int n){
 void countSort(int arr[], int n){
     int freq[100000] = {0}; 
     int minVal = INT_MAX; int maxVal = INT_MIN;
-    for(int i=0; i<n; i++){
-        minVal = min(minVal , arr[i]);
-        maxVal = max(maxVal , arr[i]);
-    }
 
     for(int i=0; i<n; i++){  // O(n)
+        minVal = min(minVal , arr[i]);
+        maxVal = max(maxVal , arr[i]);
         freq[arr[i]]++;
     }
 
-    for(int i=minVal, j=0; i<maxVal; i++){  // O(range)
+    for(int i=minVal, j=0; i<=maxVal; i++){  // O(range)
         while(freq[i] > 0){
             arr[j++] = i;
             freq[i]--;

@@ -3,6 +3,7 @@
 using namespace std;
 
 // FINDING PROFIT
+
 void maxProfit(int *prices, int n){
     int bestBuy[100000];
     bestBuy[0] =INT_MAX;

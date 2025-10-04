@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
 
+// FIND THE SUM OF DIAGONAL ELEMENTS
+
 void diagonalSum(int mat[][4], int n){
     int sum = 0;
     // Approach 1 - TC= O(n*n)
