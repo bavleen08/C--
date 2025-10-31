@@ -2,7 +2,7 @@
 #include <climits>
 using namespace std;
 
-// FIND TOTAL WATER TRAPPED
+// 42. Trapping Rain Water
 
 int trapRainwater(int *height, int n){
     int leftmax[20000], rightmax[20000];

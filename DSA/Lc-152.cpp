@@ -4,7 +4,7 @@
 #include <vector>
 using namespace std;
 
-// FINDING MAXIMUM PRODUCT OF SUBARAYS
+// 152. Maximum Product Subarray
 
 // APPROACH 1        TC= O(n*n)
 void maxSubarrayprod(int *arr, int n){

@@ -14,3 +14,9 @@ int xorBeauty(vector<int> nums, int n){
     }
     return ans; 
 }
+
+int main(){
+    vector<int> nums = {1,4};
+    cout << xorBeauty(nums, 2);
+
+}

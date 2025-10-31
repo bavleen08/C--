@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-// FIND THE TARGET AND PRINT ITS INDEX
+// 33. Search in Rotated Sorted Array
 
 // APPROACH 1= linear search
 
@@ -35,5 +35,5 @@ int main(){
     int nums[5] = {7,8,9,5,6};
     int n = sizeof(nums) / sizeof(int);
     cout << findTarget(nums, n, 6);
-
+    return 0;
 }

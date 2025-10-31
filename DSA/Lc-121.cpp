@@ -2,7 +2,7 @@
 #include <climits>
 using namespace std;
 
-// FINDING PROFIT
+// 121. Best Time to Buy and Sell Stock
 
 void maxProfit(int *prices, int n){
     int bestBuy[100000];

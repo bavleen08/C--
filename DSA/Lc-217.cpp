@@ -4,7 +4,7 @@
 #include <set>
 using namespace std;
 
-// FINDING DUPLICATES IN THE ARRAY
+// 217. Contains Duplicates
 
 // APPROACH 1
 bool duplicate(int nums1[], int n){
@@ -21,7 +21,7 @@ bool duplicate(int nums1[], int n){
 // APPROACH 2- USING RAW ARRAYS
 bool containDuplicate1(int *nums1, int n){
     sort(nums1, nums1+n); // TC= nlogn
-    for(int i=0; i<n; i++){  // TC= O(n)
+    for(int i=1; i<n; i++){  // TC= O(n)
         if(nums1[i] == nums1[i-1]){
             return true;
         }

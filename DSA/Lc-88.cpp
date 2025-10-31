@@ -2,7 +2,7 @@
 #include <algorithm>
 using namespace std;
 
-// MERGE TWO SORTED ARRAYS
+// 88. Merge Sorted Array
 
 int main(){
     int nums1[6] = {1,2,2};

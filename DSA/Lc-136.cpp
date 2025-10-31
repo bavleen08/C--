@@ -2,7 +2,8 @@
 #include <vector>
 using namespace std;
 
-// Find the element which is not repeating
+// 136. Single Number
+
 int findSingle(vector<int> nums, int n){
     int ans = 0;
     for(int i=0; i<n; i++){

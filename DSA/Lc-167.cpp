@@ -2,7 +2,7 @@
 #include <vector>
 using namespace std;
 
-// Find if any pair in sorted vector has target sum
+// 167. Two Sum II - Input Array Is Sorted
 
 // Approach 1 = pointer approach     O(n)
 vector<int> pairSum(vector<int> arr, int target){

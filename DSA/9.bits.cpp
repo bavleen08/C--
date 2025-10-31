@@ -88,7 +88,28 @@ int fastExp(int x, int n){
     }
     return ans;
 }
+// int main(){
+//     cout << fastExp(3,5);
+//     return 0;
+// }
+
+int containWater(int arr[], int n){
+    int maxi = 0;
+    int mini = -1;
+    for(int i=1; i<n-1; i++){
+        maxi = max(arr[maxi], arr[i]);
+        if(arr[i] < maxi){
+            if(arr[i] > arr[i-1] && arr[i] > arr[i+1]){
+                mini = arr[i];
+            }
+        }
+
+    }
+    int waterStored = mini * mini;
+    return waterStored;
+}
+
 int main(){
-    cout << fastExp(3,5);
-    return 0;
+    int arr[9] = {1,8,6,2,5,4,8,3,7};
+    cout << containWater(arr, 9);
 }
