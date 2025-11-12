@@ -4,6 +4,7 @@ using namespace std;
 
 // 1790. Check if One String Swap Can Make Strings Equal
 
+// Approach 1                O(n)
 bool areAlmostEqual(string s1, string s2) {
     if(s1.length() != s2.length()){
         return false;
@@ -30,7 +31,7 @@ bool areAlmostEqual(string s1, string s2) {
     return true;
 } 
 
-// Approach 1              O(n*n)
+// Approach 2              O(n*n)
 bool isSame(string str1, string str2){
     if(str1.length() != str2.length()){
         cout << "Not Same";
@@ -51,7 +52,7 @@ bool isSame(string str1, string str2){
     return false;
 }
 
-// Approach 2               O(n)
+// Approach 3               O(n)
 bool sameString(string str1, string str2){
     if(str1.length() != str2.length()){
         cout << "Not Same";
@@ -88,7 +89,7 @@ bool sameString(string str1, string str2){
     return true;    
 }
 
-// Approach 3              O(n)
+// Approach 4              O(n)
 bool areEqual(string str1, string str2){
     int idx1 = -1, idx2 = -1;
     for(int i=0; i<str1.length(); i++){

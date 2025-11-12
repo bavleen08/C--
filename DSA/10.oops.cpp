@@ -97,6 +97,7 @@ public:
     }
 };
 
+// Virtual functions
 class Parent{
 public:
     virtual void hello(){
@@ -108,6 +109,63 @@ class Children : public Parent{
         cout << "child class\n";
     }
 };
+
+// Abstraction and pure virtual function
+class Shape{
+public:
+    virtual void draw() = 0; // abstract fn / pure virtual fn
+};
+
+class Circle : public Shape {
+public:
+    void draw(){
+        cout << "draw circle\n";
+    }
+};
+class Square : public Shape {
+public:
+    void draw(){
+        cout << "draw Square\n";
+    }
+};
+
+// Static Variables
+class Exam{
+public:
+    static int x;
+};
+int Exam :: x;
+
+// Static Objects
+class Example{
+public:
+    Example(){
+        cout << "constructor...\n";
+    }
+    ~Example(){
+        cout << "distructor...\n";
+    }
+};
+
+class BB{
+public:
+    BB(){
+        cout << "base constructor"<< endl;
+    }
+    virtual ~BB(){
+        cout << "base destructor"<< endl;
+    }
+};
+class DD : public BB{
+public:
+    DD(){
+        cout << "derived constructor"<< endl;
+    }
+    ~DD(){
+        cout << "derived destructor"<< endl;
+    }  
+};
+
 
 int main(){
     // Student s1; // object
@@ -135,11 +193,31 @@ int main(){
     Complex c3 = c1 + c2;
     c3.showNum();*/
 
-    Children child1;
+    /*Children child1;
     Parent *ptr;
 
     ptr = &child1; // Run time binding
-    ptr->hello(); // Virtual function
+    ptr->hello(); // Virtual function*/
 
+    /*Circle c1;
+    c1.draw();
+    Square s1;
+    s1.draw();*/
 
+    /*Exam e1;
+    Exam e2;
+    Exam e3;
+    cout << e1.x++ << endl;
+    cout << e2.x++ << endl;
+    cout << e3.x++ << endl;*/
+
+    /*int x = 0;
+    if(x==0){
+        static Example eg1;
+    }
+    cout << "code ending...\n";*/
+
+    BB *b = new DD();
+    delete b;
+    return 0;
 }
