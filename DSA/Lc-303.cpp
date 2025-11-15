@@ -1,3 +1,6 @@
+#include <iostream>
+#include <vector>
+using namespace std;
 
 // 303. Range Sum Query - Immutable
 
@@ -23,3 +26,4 @@ public:
         }
         return sum;
     }
+};
