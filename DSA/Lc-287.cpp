@@ -1,6 +1,8 @@
 #include <iostream>
+#include <unordered_set>
 #include <vector>
 using namespace std;
+
 // 287. Find the Duplicate Number
 
     int findDuplicate(vector<int>& nums) {

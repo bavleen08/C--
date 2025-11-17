@@ -1,7 +1,8 @@
 #include <iostream>
+#include <vector>
 using namespace std;
 
-// Rotate the array to make it 2D
+// 2022. Convert 1D array into  2D array
 
 void rotate(int org[], int m, int n, int size){   // vector<vector<int>> construct2DArray(vector<int>& original, int m, int n)
     int arr[100][100]; // fixed size to avoid VLA issue  // vector<vector<int>> mat(m, vector<int>(n));

@@ -2,7 +2,8 @@
 #include <vector>
 using namespace std;
 
-// Find XOR Beauty
+// 2527. Find Xor-Beauty of Array
+
 int xorBeauty(vector<int> nums, int n){
     int ans = 0;
     for(int i=0; i<n; i++){
@@ -18,5 +19,6 @@ int xorBeauty(vector<int> nums, int n){
 int main(){
     vector<int> nums = {1,4};
     cout << xorBeauty(nums, 2);
-
+    return 0;
 }
+
