@@ -1,8 +1,8 @@
-#include <iostream>
-#include <vector>
+#include <bits\stdc++.h>
 using namespace std;
 
 // 645. Set Mismatch
+
 vector<int> findErrorNums(vector<int>& nums) {
     int n = nums.size();
     vector<int> freq(n+1, 0);
@@ -24,6 +24,6 @@ int main(){
     vector<int> nums = {1,2,2,4};
     // vector<int> ans = findErrorNums(nums);
     // cout << ans[0] <<','<< ans[1];
-    vector<pair<int>> res = findErrorNums(nums);
-    cout << res;
+    vector<int> res = findErrorNums(nums);
+    cout << res[0] << " " << res[1];
 }

@@ -1,0 +1,344 @@
+✅ THE SORTING CODE
+sort(intervals.begin(), intervals.end(), [](auto &a, auto &b){
+    if (a[1] == b[1]) return a[0] > b[0];
+    return a[1] < b[1];
+});
+
+💡 STEP 1 — What does auto mean inside [](auto &a, auto &b)?
+auto means: 👉 The compiler will automatically detect the type of a and b. We don't have to write the full type.
+
+Since your intervals is a vector of vectors: vector<vector<int>> intervals;
+Each element inside it is: vector<int>   // example: [start, end]
+
+So a and b are actually:
+vector<int>& a  
+vector<int>& b
+
+But instead of writing the long type: [](vector<int> &a, vector<int> &b)
+we simply write: [](auto &a, auto &b)
+
+✔ Why use auto?
+Cleaner code
+Compiler handles type detection
+Works for any container structure
+Modern C++ style
+
+💡 STEP 2 — What does a mean? What does b mean?
+sort() compares elements two at a time, like this:
+Compare interval X with interval Y
+Decide which should be earlier in the sorted order
+
+So inside:
+[](auto &a, auto &b)
+👉 a is the first interval
+👉 b is the second interval
+
+Example:
+If intervals are: [3,7] and [1,5]
+
+Then inside the comparator:
+a = [3,7]
+b = [1,5]
+
+You decide:
+Should [3,7] come before [1,5]? Or after it?
+The comparator decides this by returning true or false.
+
+💡 STEP 3 — Why do we write a[1] and a[0]?
+Because each interval is:[start, end]
+So:
+a[0] = start of interval a
+a[1] = end of interval a
+b[0] = start of interval b
+b[1] = end of interval b
+
+Example:
+a = [3,7]
+a[0] = 3
+a[1] = 7
+
+💡 STEP 4 — What is this part doing?
+if (a[1] == b[1]) return a[0] > b[0];
+
+Meaning:
+👉 If two intervals END at the same place
+→ then sort by START descending
+Example:
+[1,10] and [8,10]
+Both end at 10.
+
+We return:
+8 > 1 → true
+
+So [8,10] comes before [1,10].
+
+💡 STEP 5 — What is this part?
+return a[1] < b[1];
+
+Meaning:
+👉 If end values are different
+→ interval with smaller end comes first
+Example:
+[3,6] ends at 6
+[1,7] ends at 7
+Since 6 < 7 → [3,6] comes first.
+
+💡 STEP 6 — What does the whole lambda function mean?
+
+This part:
+[](auto &a, auto &b){
+    ...
+}
+is called a lambda function.
+It is an inline custom comparator passed to sort().
+It tells sort:
+👉 “This is how you should compare two intervals.”
+
+💡 STEP 7 — Why is the comparator inside sort()?
+Because default sort sorts numbers, not intervals.
+For intervals you must tell how to sort them.
+Here our custom rule is:
+1️⃣ Sort by end ascending
+2️⃣ If end same → sort by start descending
+
+So we need a custom function → lambda.
+✅ The Line of Code
+sort(intervals.begin(), intervals.end(), [](auto &a, auto &b){
+    if (a[1] == b[1]) return a[0] > b[0];
+    return a[1] < b[1];
+});
+
+🔥 1. What does the [] mean?
+
+[] is the capture list of a lambda function.
+Lambda function = anonymous function = function without a name.
+Syntax:
+[captures] (parameters) { body }
+Here, the capture list is empty: []
+
+Meaning:
+👉 This lambda doesn't take anything from outside variables.
+
+Why empty?
+Because sorting only needs the parameters a and b, nothing else.
+
+🔥 2. What does (auto &a, auto &b) mean?
+
+These are the parameters to the lambda — EXACTLY like function parameters.
+Equivalent to this:
+bool comparator(vector<int> &a, vector<int> &b);
+But we don’t specify the full type.
+Instead we write:
+✔ auto → C++ deduces the type automatically
+
+When sorting intervals (which is vector<vector<int>>),
+each element is vector<int>.
+So auto becomes: vector<int>
+
+✔ & → pass by reference
+So you do NOT copy the vectors (which is expensive).
+C++ will pass the same original interval to the lambda.
+If we used: auto a, auto b
+→ Copying each vector (bad, slow)
+
+With &:
+auto &a, auto &b
+→ Only referencing, no copy.
+
+That’s why & is used — performance.
+
+🔥 3. Why do we use the variable names a and b?
+These are just names, like function argument names.
+You could write:
+[](auto &left, auto &right)
+
+But convention:
+Comparators always compare two items, so people name them:
+a and b
+x and y
+left and right
+
+Here, a = one interval, b = another interval.
+Nothing special — just variable names.
+
+🔥 4. Why is the lambda passed inside sort()?
+
+sort()’s third argument is a comparison function.
+Meaning:
+“How should I compare two elements?”
+Default sort compares like:
+a < b
+
+But for intervals, we want a special rule:
+Sort by end time (ascending)
+If end time same → sort by start (descending)
+
+o we give sort() a custom comparator — the lambda.
+
+🔥 5. What does this mean?
+if (a[1] == b[1]) return a[0] > b[0];
+Meaning:
+If both intervals have same end time
+→ sort by start time descending
+
+Example:
+
+[1,5]
+[3,5]
+
+Sorted result:
+[3,5], [1,5]
+Because 3 > 1.
+This keeps longer intervals first when ends are equal.
+
+🔥 6. What does this mean?
+return a[1] < b[1];
+Meaning:
+👉 Otherwise, sort by end time ascending
+Intervals ending first come first.
+
+🎯 Summary (super simple)
+1. []No outside variables captured.
+2. (auto &a, auto &b)The lambda receives two intervals (vector<int>), by reference.
+3. autoC++ figures out types automatically.
+4. &Avoids copying; improves performance.
+5. a and bJust parameter names.
+6. The body
+Defines how to order the intervals.
+✅ int a = -1, b = -1;
+What is a and b?These represent two points on the number line already placed.
+Meaning:
+a = position of first selected point
+b = position of second selected point
+Why initialize with -1?
+Because:
+All intervals start at >= 0
+So a >= start will be false for the first interval
+This helps us detect that initially no points are selected.
+Why int?
+Because interval boundaries are integers.
+
+✅ int ans = 0;
+This stores the total number of points added.
+ans → ANSWER.
+Starts at 0.
+
+✅ for (auto &it : intervals)
+This is a range-based for loop.
+
+auto &it
+→ it will be a reference to each interval (vector<int>)
+→ no copying
+→ better performance
+
+: intervals
+→ iterate over all intervals
+
+Equivalent to:
+for (vector<int> &it : intervals)
+But auto is shorter.
+✅ int start = it[0], end = it[1];
+Each interval is [start, end].
+
+it[0] → first element → start point
+it[1] → second element → end point
+We store them in two variables:
+start
+end
+Makes the code easier to read.
+
+✅ bool hasA = (a >= start);
+✅ bool hasB = (b >= start);
+Meaning:
+Does point a lie inside interval [start, end]?
+Does point b lie inside interval [start, end]?
+
+Why check only >= start?
+Because:a or b ALWAYS come from previously selected end values
+so:
+a <= end  (always)
+Thus checking only:
+a >= start is enough for inclusion.
+
+Results:
+true → point is inside interval
+false → point not inside interval
+
+🔥 DECISION LOGIC
+Case 1
+if (hasA && hasB) {
+    continue;
+}
+
+If both points already cover the interval,
+→ nothing to do
+→ skip interval
+→ no points added.
+
+Case 2
+else if (hasA || hasB) 
+    ans++;
+If only one point covers the interval:
+We need one more point so interval is fully satisfied.
+
+So:
+ans++ → add 1 point
+
+Then:
+If a was covering
+if (hasA) {
+    b = end;
+}
+
+We place new point = end, in b
+If b was covering
+else {
+    a = end;
+}
+
+We place new point at end in a.
+Why end?
+Because placing at the end gives maximum coverage.
+
+Case 3
+else {
+    ans += 2;
+    a = end - 1;
+    b = end;
+}
+
+Meaning:
+Neither a nor b is inside interval.
+So we need 2 new points.
+
+Why exactly these two points?
+
+✔ Put first point at end - 1
+✔ Put second at end
+
+These two points cover:
+end
+end - 1
+This guarantees that any interval ending at end is covered optimally.
+And sorting ensured we always pick the best placement.
+
+❇ Why end - 1 and end?
+
+Because this is the optimal greedy approach: The last point at end covers the rightmost possible area.
+The second point at end - 1 ensures at least 2 coverage inside this interval.
+This strategy is used in problems like:
+✔ Minimum number of arrows / points to cover intervals
+✔ Interval scheduling
+✔ Greedy covering problems
+
+🔥 SUPER SIMPLE SUMMARY
+a & b
+Two latest points we placed.
+
+hasA & hasB
+Checks whether a/b lie inside current interval.
+
+Cases
+1️⃣ Both inside → skip
+2️⃣ One inside → add one more point
+3️⃣ None inside → add two points at optimal positions

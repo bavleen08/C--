@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// Count total ways to tile a floor(2xn) with tiles(2x1)
+// Count total ways to tile a floor(2xn) with tiles(2x1) (GOOGLE)  (AMAZON)
 
 int tileWays(int n){
     if(n == 0 || n == 1){
