@@ -1,4 +1,4 @@
-#include <bits\stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Node{
@@ -60,7 +60,7 @@ public:
         }
     }
 
-    void printList(){
+    void printList(Node*head){
         Node* temp = head;
         while(temp != NULL){
             cout << temp->data << " -> ";
@@ -252,34 +252,34 @@ public:
         }
     }
 
-    // MERGE SORT ON LL
+// MERGE SORT ON LL
     Node* merge(Node*left, Node*right){
-        List ans;
+        List* ans = new List();
         Node* i = left;  // temp variables
         Node* j = right;
 
         while(i != NULL && j != NULL){
             if(i->data <= j->data){
-                ans.push_back(i->data);
+                ans->push_back(i->data);
                 i = i->next;
             }
             else{
-                ans.push_back(j->data);
+                ans->push_back(j->data);
                 j = j->next;
             }
         }
 
         while(i != NULL){
-            ans.push_back(i->data);
+            ans->push_back(i->data);
             i = i->next;
         }
 
         while(j != NULL){
-            ans.push_back(j->data);
+            ans->push_back(j->data);
             j = j->next;
         }
 
-        return ans.head;
+        return ans->head;
     }
 
     Node* splitAtMid(Node*head){
@@ -310,17 +310,202 @@ public:
 
         return merge(left, right);
     }
+
+// Zig Zag LL
+    Node* alternateMerge(Node*left, Node* right){
+        Node* tail = right;
+        while(left != NULL && right != NULL){
+            Node* nextLeft = left->next;
+            Node* nextRight = right->next;
+
+            left->next = right;
+            right->next = nextLeft;
+            tail = right;
+
+            left = nextLeft;
+            right = nextRight;   
+        }
+        if(right != NULL){
+            tail->next = right;
+        }
+        return head;
+    }
+
+    Node* zigZagll(Node* head){
+        Node* leftHead = head;
+        Node* rightHead = splitAtMid(head);
+
+        Node* prev = NULL;
+        Node* curr = rightHead;
+        Node* next = NULL;
+
+        while(curr != NULL){
+            next = curr->next;
+            curr->next = prev;
+            prev = curr;
+            curr = next;
+        }
+
+        Node* rightHeadRev = prev;
+
+        return alternateMerge(leftHead, rightHeadRev);
+    }
+
+    int findInter(Node* headA, Node* headB){
+        Node*listAhead = headA;
+        Node*listBhead = headB;
+
+        while(headA != headB){
+            if(headA == NULL){
+                headA = listBhead;
+            }else{
+                headA = headA->next;
+            }
+            headB = (headB == NULL)? listAhead : headB->next;
+        }
+        return headA->data;
+    }
+
+    Node* retMdelN(Node* head, int m, int n){
+        if(head == NULL || m == 0) return NULL;
+
+        Node *ptr = head;
+        Node *prev = NULL;
+
+        while(ptr != NULL){
+            // retain m nodes
+            for(int i = 1; i <= m && ptr != NULL; i++){
+                prev = ptr;
+                ptr = ptr->next;
+            }
+
+            // delete next n nodes
+            for(int i = 1; i <= n && ptr != NULL; i++){ //If list ends early, you stop deleting safely.
+                Node* temp = ptr;
+                ptr = ptr->next;
+                delete temp;
+            }
+
+            if(prev != NULL){  //Connect last kept node → next remaining node.
+            prev->next = ptr;
+            }
+        }
+        return head;
+    }
+
+    Node* swapNodes(Node* head, int x, int y){
+        if(x == y){
+            return head;
+        }
+        Node* currX = head;
+        Node* currY = head;
+        Node* prevX = NULL;
+        Node* prevY = NULL;
+
+        while(currX && currX->data != x){
+            prevX = currX;
+            currX = currX->next;
+        }
+
+        while(currY && currY->data != y){
+            prevY = currY;
+            currY = currY->next;
+        }
+
+        if (currX == NULL || currY == NULL)
+        return head;
+
+     // If X is not head
+        if (prevX != NULL)
+            prevX->next = currY;
+        else
+            head = currY;
+
+    // If Y is not head
+        if (prevY != NULL)
+            prevY->next = currX;
+        else
+            head = currX;
+
+        Node* temp = currX->next;
+        currX->next = currY->next;
+        currY->next = temp;
+    
+        return head;
+    }
+
+    Node* oddEven(Node* head){
+        if (!head) return NULL;
+        
+        Node* evenHead = NULL;
+        Node* evenTail = NULL;
+        Node* oddHead = NULL;
+        Node* oddTail = NULL;
+
+        Node* curr = head;
+
+    
+
+        while(curr != NULL){
+            if(curr->data % 2 == 0){
+                if(!evenHead){
+                    evenHead = evenTail = curr;
+                }
+                else{
+                    evenTail->next = curr;
+                    evenTail = curr;
+                }
+                
+            }else{
+                if(!oddHead){
+                    oddHead = oddTail = curr;
+                }
+                else{
+                    oddTail->next = curr;
+                    oddTail = curr;
+                }
+            }
+            curr = curr->next;
+        }
+        if(evenTail) evenTail->next = oddHead;
+        if(oddTail) oddTail->next = NULL;
+
+        return evenHead ? evenHead: oddHead;
+    }
 };
 
 int main(){
     List ll;
-    ll.push_front(1);
-    ll.push_front(2);
-    ll.push_front(3);
+    
+    // ll.push_front(10);
+    // ll.push_front(9);
+    // ll.push_front(8);
+    // ll.push_front(7);
+    // ll.push_front(6);
+    ll.push_front(5);
     ll.push_front(4);
+    ll.push_front(3);
+    ll.push_front(2);
+    ll.push_front(1);
 
-    ll.printList();
-    ll.head = ll.mergeSort(ll.head);
-    ll.printList();
+    // ll.head = ll.mergeSort(ll.head);
+    // ll.zigZagll(ll.head);
+
+    // Node* shared = new Node(3);
+    // shared->next = new Node(4);
+    // Node* headA = new Node(1);
+    // headA->next = new Node(2);
+    // headA->next->next = shared;
+    // Node* headB = new Node(8);
+    // headB->next = shared;
+    // ll.printList(headA);
+    // cout << ll.findInter(headA, headB);
+
+    ll.printList(ll.head);
+    // ll.retMdelN(ll.head, 2, 2);
+    // ll.head = ll.swapNodes(ll.head, 1, 4); // if Function returns new head
+    ll.head = ll.oddEven(ll.head);
+    ll.printList(ll.head);
+
     return 0;   
 }
