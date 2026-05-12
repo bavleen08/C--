@@ -74,7 +74,8 @@ void quickSort(int arr[], int si, int ei){
     quickSort(arr, si, pivotIdx-1);
     quickSort(arr, pivotIdx+1, ei);
 }
-void printArr(int arr[], int n){
+
+void printArr(char arr[][10], int n){
     for(int i=0; i<n; i++){
         cout << arr[i] << " ";
     }
@@ -111,13 +112,51 @@ int search(int arr[], int si, int ei, int tar){
     }
 }
 
-int main(){
-    int arr[6] = {6,7,8,3,4,5};
-    int n = 6;
+// merge sort array of strings 
+void mergeFunc(char arr[][10], int st, int end, int mid){
+    vector<string> temp;
+    int i = st;
+    int j = mid+1;
+    while(i<=mid && j<=end){
+        if(strcmp(arr[i], arr[j]) < 0){
+            temp.push_back(arr[i]);
+            i++;
+        } else{
+            temp.push_back(arr[j]);
+            j++;
+        }
+    }
+    while(i <= mid){
+        temp.push_back(arr[i++]);
+    }
+    while(j <= end){
+        temp.push_back(arr[j++]);
+    }
 
-    mergeSort(arr, 0, n-1);
+    // vector temp --> org arr
+    for(int idx=st, x=0; idx<=end; idx++){  // loop on org array
+        strcpy(arr[idx], temp[x++].c_str());
+    }
+}
+void ms(char arr[][10], int st, int end){
+    if(st >= end){
+        return;
+    }
+    int mid = st+ (end-st)/2;
+    ms(arr, st, mid);
+    ms(arr, mid+1, end);
+    mergeFunc(arr, st, end, mid); 
+}
+int main(){
+    // int arr[6] = {6,7,8,3,4,5};
+    // int n = 6;
+
+    // mergeSort(arr, 0, n-1);
     // printArr(arr, n);
     // quickSort(arr, 0, n-1);
+    char arr[5][10] = {"sam", "joe", "doe"};
+    int n = 3;
+    ms(arr, 0, n-1);
     printArr(arr, n);
     //cout << search(arr, 0, n-1, 3);
     return 0;

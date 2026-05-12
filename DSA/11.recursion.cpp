@@ -69,6 +69,24 @@ int PowerOfx(int x, int n){
     return halfPowSq;
 }
 
+// count good numbers
+long long power(long long base, long long exp, long long mod){
+    long long ans = 1;
+    while(exp > 0){
+        if(exp%2 == 1){
+            ans = (ans*base) % mod;
+        }
+        base = (base * base) % mod;
+        exp = exp >> 1;
+    }
+    return ans;
+}
+    long long countGoodNumbers(long long n) {
+        long long mod = 1000000007;
+        long long evenCount = n%2 == 0?n/2: n/2+1;
+        long long oddCount = n/2;
+        return(power(5, evenCount, mod) * power(4, oddCount, mod)) % mod;
+    }
 int main(){
     cout << pow(2,8);
     cout << PowerOfx(2,8);

@@ -183,6 +183,79 @@ bool sodukuSolver(int soduku[9][9], int row, int col){
     }
     return false;
 }
+
+// keypad combinations
+    void keyComb(string digits, int pos, string ans,  vector<string> &mapping){
+
+        if(pos == digits.length()){
+            cout << ans << " ";
+            return;
+        }else{
+            string s = mapping[digits[pos]- '0'];
+            for(int i=0; i<s.length(); i++){
+                keyComb(digits, pos+1, ans+s[i], mapping);
+            }
+        }
+    }
+    void letterCombinations(string digits) {
+        if(digits.length() == 0){
+            return;
+        }
+        vector<string> mapping = {"", "", "abc", "def", "ghi", "jkl", "mno","pqrs", "tuv", "wxyz"};
+
+        string ans = "";
+        int pos = 0;
+        keyComb(digits, pos, ans, mapping);
+    }
+
+// knight tour
+
+void printKnights(vector<vector<int>> board, int n){
+    for(int i=0; i<n; i++){
+        for(int j=0; j<n; j++){
+            cout << board[i][j] << "    ";
+        }
+        cout << endl;
+    }
+}
+
+bool knightMoves(int r, int c, int move, int n, vector<vector<int>> &board){
+    if(r<0 || c<0 || c>=n || r>=n || board[r][c] != -1){
+        return false;
+    }
+
+    board[r][c] = move;
+
+    if(move == (n*n)-1){
+        printKnights(board , n);
+        return true;
+    }
+
+
+    // possible moves
+    if (knightMoves(r+2, c+1, move+1, n, board)) return true;
+    if (knightMoves(r+2, c-1, move+1, n, board)) return true;
+    if (knightMoves(r-2, c+1, move+1, n, board)) return true;
+    if (knightMoves(r-2, c-1, move+1, n, board)) return true;
+    if (knightMoves(r+1, c+2, move+1, n, board)) return true;
+    if (knightMoves(r+1, c-2, move+1, n, board)) return true;
+    if (knightMoves(r-1, c+2, move+1, n, board)) return true;
+    if (knightMoves(r-1, c-2, move+1, n, board)) return true;
+
+    board[r][c] = -1;
+    return false;
+}
+
+void knightTour(int n){
+    if(n == 0){
+        cout << "Give valid size of board";
+        return;
+    }
+    vector<vector<int>> board(n, vector<int>(n, -1));
+
+    knightMoves(0, 0, 0, n, board);
+}
+
 int main(){
     
     // vector<vector<char>> board;
@@ -205,6 +278,7 @@ int main(){
                         {0,3,0,0,7,2,0,0,4},
                         {0,4,9,0,3,0,0,5,7},
                         {8,2,7,0,0,9,0,1,3}};
-    sodukuSolver(soduku,0,0);
+    // letterCombinations("23");
+    knightTour(5);
     return 0;
 }
