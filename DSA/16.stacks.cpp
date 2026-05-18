@@ -143,6 +143,7 @@ void printStack(stack<int> s){
     }
 }
 
+// STOCK SPAN PROBLEM
 void stockSpanProblem(vector<int> stock, vector<int> span){
     stack<int> s;
     s.push(0);
@@ -167,6 +168,49 @@ void stockSpanProblem(vector<int> stock, vector<int> span){
     }
     cout << endl;
 }
+
+// NEXT GREATER ELEMENT
+void nextGreaterElement(vector<int> &arr, vector<int> &ans){
+    stack<int> s;
+    int idx = arr.size()-1;
+    ans[idx] = -1;
+    s.push(arr[idx]);
+    for(int i=idx-1; i>=0; i--){
+        int curr = arr[i];
+        while(!s.empty() && curr >= s.top()){
+            s.pop();
+        }
+        if(s.empty()){
+            ans[i] = -1;
+        } else{
+            ans[i] = s.top();
+        }
+        s.push(curr);
+    }
+    for(int i=0; i<ans.size(); i++){
+        cout << ans[i] << " ";
+    }
+    cout << endl;
+}
+
+// DUPLICATE PARENTHESIS
+bool isDuplicate(string str){
+    stack<char> s;
+    for(int i=0; i<str.size(); i++){
+        if(str[i] != ')'){
+            s.push(str[i]);
+        } else{
+            if(s.top() == '('){
+                return true;
+            }
+            while(s.top() != '('){
+                s.pop();
+            }
+            s.pop();
+        }
+    }
+    return false;
+}
 int main(){
 
     // pushAtBottom(s, 5);
@@ -177,7 +221,16 @@ int main(){
 
     vector<int> stock = {90,80,70,100,60};
     vector<int> span = {0,0,0,0,0};
-    stockSpanProblem(stock, span);
+    // stockSpanProblem(stock, span);
+
+    vector<int> arr = {6,8,0,1,3};
+    vector<int> ans = {0,0,0,0,0};
+    // nextGreaterElement(arr, ans);
+
+    string str1 = "((a+b))"; // 1
+    string str2 = "((a+b) + c)"; // 0
+    cout << isDuplicate(str1) << endl;
+    cout << isDuplicate(str2);
 
 
     return 0;

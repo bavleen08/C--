@@ -12,13 +12,13 @@ bool isValid(string s) {
             st.push(s[i]);
         }
         else{
-            if(st.empty() == true){
+            if(st.empty() == true){  //insufficient no. of opening brackets
                 return false;
             } else if((st.top() == '(' && s[i] == ')') || (st.top() == '[' && s[i] == ']') || (st.top() == '{' && s[i] == '}')){
                 st.pop();
             }
             else{
-                return false;
+                return false;  //insufficient no. of closing brackets
             }
         }
     }
