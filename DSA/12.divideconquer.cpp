@@ -147,6 +147,44 @@ void ms(char arr[][10], int st, int end){
     ms(arr, mid+1, end);
     mergeFunc(arr, st, end, mid); 
 }
+
+// Inversion count
+int mergef(vector<int> &arr, int si, int ei, int mid){
+    int invCount = 0;
+    vector<int> temp;
+    int i=si, j=mid+1;
+    while(i <= mid && j <= ei){
+        if(arr[i] <= arr[j]){
+            temp.push_back(arr[i++]);
+        } else {
+            temp.push_back(arr[j++]);
+            invCount += mid-i+1;
+        }
+    }
+    while(i <= mid){
+        temp.push_back(arr[i++]);
+    }
+    while(j <= ei){
+        temp.push_back(arr[j++]);
+    }
+
+    for(int idx=si, x=0; idx<=ei; idx++){  
+        arr[idx] = temp[x++];
+    }
+    return invCount;
+}
+int mergeSortf(vector<int> &arr, int si, int ei){
+    int count= 0;
+    if(si < ei){
+        int mid = si + ((ei - si)/2);
+        count += mergeSortf(arr, si, mid);
+        count += mergeSortf(arr, mid+1, ei);
+
+        count += mergef(arr, si, ei, mid);
+        return count;
+    }
+    return 0;
+}
 int main(){
     // int arr[6] = {6,7,8,3,4,5};
     // int n = 6;
@@ -154,10 +192,13 @@ int main(){
     // mergeSort(arr, 0, n-1);
     // printArr(arr, n);
     // quickSort(arr, 0, n-1);
-    char arr[5][10] = {"sam", "joe", "doe"};
-    int n = 3;
-    ms(arr, 0, n-1);
-    printArr(arr, n);
+    // char arr[5][10] = {"sam", "joe", "doe"};
+    // int n = 3;
+    // ms(arr, 0, n-1);
+    // printArr(arr, n);
     //cout << search(arr, 0, n-1, 3);
+
+    vector<int> arr = {6,3,5,2,7};
+    cout << "inversion count : "<< mergeSortf(arr, 0, 4);
     return 0;
 }

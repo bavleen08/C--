@@ -211,6 +211,91 @@ bool isDuplicate(string str){
     }
     return false;
 }
+
+// MAX AREA OF HISTOGRAM
+int maxAreaHistogram(vector<int> &heights){
+    int n= heights.size();
+    vector<int> nsl(n);
+    vector<int> nsr(n);
+    stack<int> s;
+
+    // next smaller left
+    nsl[0] = -1;
+    s.push(0);
+    for(int i=1; i<n; i++){
+        int curr = heights[i];
+        while(!s.empty() && curr <= heights[s.top()]){
+            s.pop();
+        }
+        if(s.empty()){
+            nsl[i] = -1;
+        } else{
+            nsl[i] = s.top();
+        }
+        s.push(i);
+    }
+
+    while(!s.empty()){
+        s.pop();
+    }
+
+    // next smaller right
+    nsr[n-1] = n;
+    s.push(n-1);
+    for(int i=n-2; i>=0; i--){
+        int curr = heights[i];
+        while(!s.empty() && curr <= heights[s.top()]){
+            s.pop();
+        }
+        if(s.empty()){
+            nsr[i] = n;
+        } else{
+            nsr[i] = s.top();
+        }
+        s.push(i);
+    }
+
+    long int maxArea = 0, area = 0;
+    for(int i=0; i<n; i++){
+        area = heights[i] * (nsr[i] - nsl[i] - 1);
+        maxArea = max(area, maxArea);
+    }
+    return maxArea;
+}
+
+// 394 
+string decodeString(string s) {
+        stack<int> intStack;
+        stack<string> strStack;
+        string currStr = "";
+        string repeated = "";
+        int k = 0;
+        for(char c:s){
+            if(c >= '0' && c <= '9') k = k * 10 + (c - '0');
+            else {
+                if(c=='[') {
+                    intStack.push(k);  // push complete number
+                    k = 0;  
+                    strStack.push(currStr);
+                    currStr = "";
+                }
+                else if(c==']'){
+                    repeated = "";
+                    int num = intStack.top();
+                    for(int i=0; i<num; i++){
+                        repeated += currStr;
+                    }
+                    currStr = strStack.top() + repeated;
+                    intStack.pop();
+                    strStack.pop();
+                } else {
+                currStr += c;
+                }
+            }
+        }
+        return currStr;
+    }
+
 int main(){
 
     // pushAtBottom(s, 5);
@@ -229,8 +314,11 @@ int main(){
 
     string str1 = "((a+b))"; // 1
     string str2 = "((a+b) + c)"; // 0
-    cout << isDuplicate(str1) << endl;
-    cout << isDuplicate(str2);
+    // cout << isDuplicate(str1) << endl;
+    // cout << isDuplicate(str2);
+
+    vector<int> heights = {2,1,5,6,2,3};
+    cout << "maximum area: " << maxAreaHistogram(heights);
 
 
     return 0;
