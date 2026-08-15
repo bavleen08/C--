@@ -18,6 +18,16 @@ void maxProfit(int *prices, int n){
     cout << "maximum profit: "<< maxProfit<< endl;
     // TC = O(n+n) = O(2n) = O(n)
 }
+
+int maxProfit2(int *prices, int n){
+    int minPrice = 0;
+    int profit = 0;
+    for(int i=0; i<n; i++){
+        profit = max(prices[i]-minPrice, profit);
+        minPrice = min(prices[i], minPrice);
+    }
+    return profit;
+}
 int main(){
     int prices[6] = {7,1,5,3,6,4};
     int n = sizeof(prices) / sizeof(int);

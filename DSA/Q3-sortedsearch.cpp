@@ -66,3 +66,33 @@ int main(){
     sortedMat3(mat,4,4,50);
     return 0;
 }
+
+//search in sorted matrix when last element of one row is always smaller than the first element of next row
+
+// class Solution {
+// public:
+//     bool searchMatrix(vector<vector<int>>& matrix, int target) {
+//         int rows = matrix.size();
+//         int cols = matrix[0].size();
+
+//         int st = 0;
+//         int end = rows*cols-1;
+
+//         while(st <= end){
+//             int mid = st + (end-st)/2;
+
+//             int row = mid / cols;
+//             int col = mid % cols;
+//             if(matrix[row][col] == target) return true;
+
+//             else if(matrix[row][col] < target){
+//                 st = mid+1;
+//             }
+            
+//             else{
+//                 end = mid-1;  
+//             }
+//         }
+//         return false;
+//     }
+// };

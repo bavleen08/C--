@@ -59,11 +59,7 @@ int printArr(int nums[], int n){ // pointer to the array
 //     }
 //     return -1;
 // }
-// int main(){
-//     int arr[] = {2, 4, 6, 8, 10, 12, 14};
-//     int n = sizeof(arr) / sizeof(int);
-//     cout << linearSearch(arr, n, 20);
-// }
+
 
 // REVERSE AN ARRAY
 // approach 1- with extra space

@@ -296,6 +296,40 @@ string decodeString(string s) {
         return currStr;
     }
 
+    // 71
+    string simplifyPath(string path) {
+        // stack<string> st;
+        // stack<string> ans;
+        vector<string> st;
+        string res;
+        stringstream ss(path);
+        string token;
+
+        while(getline(ss, token, '/')){
+            if(token == "." || token == ""){
+                continue;
+            }
+            else if(token == ".."){
+                if(!st.empty()) st.pop_back();
+            }else {
+                st.push_back(token);
+            }
+        }
+        // while(!st.empty()){
+        //     ans.push(st.top());
+        //     st.pop();
+        // }
+        // while(!ans.empty()){
+        //     res += "/" + ans.top();
+        //     ans.pop();
+        // }
+        for(int i=0; i<st.size(); i++){
+            res += '/' + st[i];
+        }
+        return res.empty() ? "/" : res;
+        // return res;
+    }
+
 int main(){
 
     // pushAtBottom(s, 5);

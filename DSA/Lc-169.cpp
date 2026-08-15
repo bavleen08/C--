@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <unordered_map>
 using namespace std;
 
 // 169. Majority Element
@@ -35,9 +36,25 @@ int mE(vector<int>& nums){
     return candidate;
 }
 
+void majEl(vector<int> &nums){
+    unordered_map<int, int> m;
+    for(int i=0; i<nums.size(); i++){
+        if(m.count(nums[i])){
+            m[nums[i]]++;
+        } else{
+            m[nums[i]] = 1;
+        }
+    }
+    for(pair<int, int> vec: m){
+        if(vec.second > nums.size()/3){
+            cout << vec.first << " ";
+        }
+    }
+}
+
 int main(){
-    vector<int> nums = {3,3,3,3,2,2,2};
-    cout << mE(nums);
+    vector<int> nums = {3,3,2,2,2,2,2};
+    majEl(nums);
     return 0;
 }
 
